@@ -1,10 +1,12 @@
 from selenium import webdriver
-from jobs_scraper import JobsScraper
 from indeed_job_scrap import message_list
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+
 
 d = 'chromedriver.exe'
-name = input('Enter group/user name:\nexample: Cleantech TAU\n')
+name = 'Cleantech TAU'
+# name = 'Cleantech TAU'
+# name = input('Enter group/user name:\nexample: Cleantech TAU\n')
 msg = message_list
 
 message_head = "Hey guys, here is this week jobs:"
@@ -19,7 +21,6 @@ def send_whatsapp_msg(driver, send_to, message):
     # name = input("Enter name or group name:")
     # msg = input("Enter message:")
     count = 1
-
     input("Enter anything after scan QR code:\n")
 
     user = driver.find_element_by_xpath("//span[@title='{}']".format(send_to))

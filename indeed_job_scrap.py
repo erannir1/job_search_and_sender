@@ -20,6 +20,7 @@ def set_df(the_scraper, search_key):
     df = the_scraper.scrape()
     df["title"] = df["title"].str.lower()
     df = df[df['title'].str.contains(search_key)]
+    print(df)
     df = df.drop('salary', axis=1)
     df = df.reset_index(drop=True)
     return df
